@@ -10857,3 +10857,67 @@ html {
     height: 50;
     object-fit: contain;
 }
+
+.logo-container {
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%; 
+    /* Augmentez le padding pour donner plus d'espace autour du logo */
+    padding: 50px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    /* On définit une taille minimale pour forcer un grand cercle */
+    min-width: 300px;
+    min-height: 300px;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+    .logo-container {
+        padding: 30px;
+        min-width: 250px;
+        min-height: 250px;
+        width: 90%; /* Pour éviter qu'il ne soit trop grand sur petits écrans */
+    }
+}
+
+@media (max-width: 768px) {
+    header .text-xl-start {
+        background: rgba(0, 0, 0, 0.4); /* Voile noir transparent */
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(5px); /* Optionnel : léger flou pour le style */
+    }
+}
+.hero-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                url('../assets/fond.jpg');
+    
+    /* L'image garde sa taille originale et se répète horizontalement */
+    background-size: auto 100% !important; 
+    background-repeat: repeat-x !important; 
+    background-position: center center !important;
+
+    min-height: 60vh !important;
+    display: flex;
+    align-items: center;
+}
+
+/* On garde le comportement "cover" sur mobile car la répétition y est inutile */
+@media (max-width: 768px) {
+    .hero-header {
+        min-height: auto !important;
+        /* On augmente le padding-top pour descendre le contenu sous la nav */
+        padding-top: 1rem !important; 
+        /* On augmente le padding-bottom pour décoller les boutons du bas de l'image */
+        padding-bottom: 5rem !important; 
+        background-position: center center !important;
+        /* On s'assure que le contenu ne touche pas les bords de l'écran */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+   }
